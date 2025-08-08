@@ -16,8 +16,22 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+# عرض محتويات مجلد target لكل موديول
+- script: ls -la Server/target
+  displayName: 'List Server target contents'
+
+- script: ls -la Webapp/target
+  displayName: 'List Webapp target contents'
+
+# نشر ملفات البناء من كل موديول على حدة
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: 'target'
-    ArtifactName: 'drop'
+    PathtoPublish: 'Server/target'
+    ArtifactName: 'Server-drop'
+    publishLocation: 'Container'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'Webapp/target'
+    ArtifactName: 'Webapp-drop'
     publishLocation: 'Container'
