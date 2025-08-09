@@ -1,8 +1,3 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - master
 
@@ -24,3 +19,7 @@ steps:
     codeCoverageToolOption: 'JaCoCo'
     codeCoverageClassFilesDirectories: '**/target/classes'
     codeCoverageSourceDirectories: 'src/main/java'
+
+# عرض محتويات مجلد target للتأكد
+- script: ls -la target
+  displayName: 'List target directory contents'
