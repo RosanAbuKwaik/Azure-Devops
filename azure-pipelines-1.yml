@@ -20,3 +20,7 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+    checkStyleRunAnalysis: true
+    codeCoverageToolOption: 'JaCoCo'
+    codeCoverageClassFilesDirectories: '**/target/classes'
+    codeCoverageSourceDirectories: 'src/main/java'
