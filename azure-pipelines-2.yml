@@ -26,3 +26,4 @@ steps:
 # نشر الملفات كـ Artifact
 - publish: $(Build.ArtifactStagingDirectory)
   artifact: drop
+
