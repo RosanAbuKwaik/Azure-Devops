@@ -19,11 +19,10 @@ steps:
 # نسخ الملفات الناتجة لمجلد الـ Staging
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'target'
+    SourceFolder: 'server/target'
     Contents: '*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 # نشر الملفات كـ Artifact
 - publish: $(Build.ArtifactStagingDirectory)
   artifact: drop
-
